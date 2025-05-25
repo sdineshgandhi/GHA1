@@ -26,6 +26,15 @@ jobs:
    
     - name: gileaks codescan
       run: gitleaks detect source.  -r gitleaks-report.json -f json
+
+  test:
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v4
+  
+    - name: Unit test cases
+      run: mvn test
       
 
       
